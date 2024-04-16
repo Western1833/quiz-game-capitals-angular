@@ -1,0 +1,20 @@
+.wrapper {
+    width: 800px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(62, 78, 111, 0.5);
+    padding: 4em;
+}
+
+.wrapper h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    color: rgb(180, 51, 12);
+    line-height: 0;
+}

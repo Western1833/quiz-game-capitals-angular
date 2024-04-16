@@ -1,0 +1,10 @@
+.question p {
+    font-size: 1.4em;
+    line-height: 0;
+}
+
+.question p span {
+    font-size: 1.2em;
+    line-height: 0;
+    color: rgb(77, 174, 8);
+}
