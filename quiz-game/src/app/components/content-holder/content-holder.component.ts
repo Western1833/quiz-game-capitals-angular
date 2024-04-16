@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./content-holder.component.css']
 })
 export class ContentHolderComponent {
+  countries: {} = {};
 
+  loadCountries() {
+    
+  }
 }
