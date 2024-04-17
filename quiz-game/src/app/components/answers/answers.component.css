@@ -50,3 +50,7 @@
     border-radius: 0.3em;
     padding: 0.2em;
 }
+
+.up span, .down span {
+    color: rgb(180, 51, 12);
+}

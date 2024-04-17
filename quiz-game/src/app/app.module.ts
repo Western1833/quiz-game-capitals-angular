@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ContentHolderComponent } from './components/content-holder/content-holder.component';
 import { QuestionComponent } from './components/question/question.component';
 import { AnswersComponent } from './components/answers/answers.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AnswersComponent } from './components/answers/answers.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
