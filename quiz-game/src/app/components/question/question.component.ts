@@ -19,7 +19,7 @@ export class QuestionComponent implements OnInit{
   ngOnInit(): void {
     this.countriesService.getAllCountries().subscribe(res => {
       this.countries = res;
-      this.countryId = randomNumber(7);
+      this.countryId = randomNumber(32);
       this.currentCountry = this.countries[this.countryId].country;
       this.sendCountryId();
     });

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Countries } from 'src/app/interfaces';
 import { GetCountriesService } from 'src/app/services/get-countries.service';
 import { SharedCountryIdService } from 'src/app/services/shared-country-id.service';
-import { randomNumber } from 'src/app/utils';
+import { randomNumber, arrayShuffle } from 'src/app/utils';
 
 @Component({
   selector: 'app-answers',
@@ -29,11 +29,12 @@ export class AnswersComponent implements OnInit{
       for(let i = 0; i < 3; i++){
         this.formingTheAnswersArray();
       }
+      arrayShuffle(this.arrayWithCoutriesForAnswers);
     });
   }
 
   formingTheAnswersArray() {
-    this.randomCapital = this.arrayWithAllCountries[randomNumber(7)].capital;
+    this.randomCapital = this.arrayWithAllCountries[randomNumber(32)].capital;
     this.arrayWithCoutriesForAnswers.push(this.randomCapital);
   }
 }
