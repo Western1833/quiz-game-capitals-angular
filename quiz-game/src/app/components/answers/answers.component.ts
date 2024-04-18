@@ -38,7 +38,7 @@ export class AnswersComponent implements OnInit{
     this.arrayWithCoutriesForAnswers.push(this.randomCapital);
   }
 
-  checkAnswer() {
-    
+  checkAnswer(clickedAnswer: string | null) {
+    console.log(clickedAnswer);
   }
 }
