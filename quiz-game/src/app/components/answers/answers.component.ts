@@ -37,4 +37,8 @@ export class AnswersComponent implements OnInit{
     this.randomCapital = this.arrayWithAllCountries[randomNumber(32)].capital;
     this.arrayWithCoutriesForAnswers.push(this.randomCapital);
   }
+
+  checkAnswer() {
+    
+  }
 }
