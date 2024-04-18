@@ -3,3 +3,7 @@ export function randomNumber(n: number) {
     const randomNumber = Math.floor(randomDecimal * n) + 1;
     return randomNumber;
 }
+
+export function arrayShuffle(array: string[]) {
+    
+}
