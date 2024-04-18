@@ -7,13 +7,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    gap: 1em;
 }
 
 .up {
     display: flex;
-    gap: 1.5em;
-    margin-bottom: 0.5em;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .up span, .down span {
@@ -35,7 +35,8 @@
 
 .down {
     display: flex;
-    gap: 1.5em;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .down a {
