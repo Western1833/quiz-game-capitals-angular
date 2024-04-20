@@ -10,18 +10,18 @@
     gap: 1em;
 }
 
-.up {
+.left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5em;
 }
 
-.up span, .down span {
+.left span, .down span {
     margin-right: 0.6em;
 }
 
-.up span:nth-child(2) {
+.left span:nth-child(2) {
     text-decoration: none;
     color: black;
     font-size: 1.05em;
@@ -29,20 +29,20 @@
     cursor: pointer;
 }
 
-.up span:nth-child(2):hover {
+.left span:nth-child(2):hover {
     background-color: aqua;
     border-radius: 0.3em;
     padding: 0.2em;
 }
 
-.down {
+.right {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5em;
 }
 
-.down span:nth-child(2) {
+.right span:nth-child(2) {
     text-decoration: none;
     cursor: pointer;
     color: black;
@@ -50,12 +50,12 @@
     padding: 0.2em;
 }
 
-.down span:nth-child(2):hover {
+.right span:nth-child(2):hover {
     background-color: aqua;
     border-radius: 0.3em;
     padding: 0.2em;
 }
 
-.up span, .down span {
+.left span, .right span {
     color: rgb(180, 51, 12);
 }

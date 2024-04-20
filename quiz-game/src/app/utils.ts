@@ -19,3 +19,7 @@ export function arrayShuffle(array: string[]) {
 
     return array;
 }
+
+export function checkRepetitionCapitals(array: string[]) {
+    
+}

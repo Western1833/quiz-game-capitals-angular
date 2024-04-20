@@ -9,14 +9,16 @@ import { randomNumber, arrayShuffle } from 'src/app/utils';
   templateUrl: './answers.component.html',
   styleUrls: ['./answers.component.css']
 })
-export class AnswersComponent implements OnInit{
+export class AnswersComponent implements OnInit {
   countryId: number = 0;
   arrayWithAllCountries: Countries[] = [];
   arrayWithCoutriesForAnswers: string[] = [];
   correctAnswer: string = '';
   randomCapital: string = '';
+  threeRandomCapitals: number[] = [];
+  randomNumberForRandomCapital: number = 0;
 
-  constructor(private sharedService: SharedCountryIdService, private getAllCountries: GetCountriesService) {}
+  constructor(private sharedService: SharedCountryIdService, private getAllCountries: GetCountriesService) { }
 
   ngOnInit(): void {
     this.sharedService.countryId$.subscribe(id => {
@@ -26,7 +28,7 @@ export class AnswersComponent implements OnInit{
       this.arrayWithAllCountries = res;
       this.correctAnswer = this.arrayWithAllCountries[this.countryId].capital;
       this.arrayWithCoutriesForAnswers.push(this.correctAnswer);
-      for(let i = 0; i < 3; i++){
+      for (let i = 0; i < 3; i++) {
         this.formingTheAnswersArray();
       }
       arrayShuffle(this.arrayWithCoutriesForAnswers);
@@ -34,8 +36,22 @@ export class AnswersComponent implements OnInit{
   }
 
   formingTheAnswersArray() {
-    this.randomCapital = this.arrayWithAllCountries[randomNumber(32)].capital;
-    this.arrayWithCoutriesForAnswers.push(this.randomCapital);
+    this.randomNumberForRandomCapital = randomNumber(32);
+    if (this.countryId !== this.randomNumberForRandomCapital) {
+      this.threeRandomCapitals.push(this.randomNumberForRandomCapital);
+      this.randomNumberForRandomCapital = 0;
+    } else {
+      if ((this.randomNumberForRandomCapital + 1) > 32) {
+        this.threeRandomCapitals.push(this.randomNumberForRandomCapital);
+        this.randomNumberForRandomCapital - 1;
+        console.log('error1')
+      } else if ((this.randomNumberForRandomCapital - 1) === 0) {
+        this.threeRandomCapitals.push(this.randomNumberForRandomCapital);
+        this.randomNumberForRandomCapital + 1;
+        console.log('error2')
+      }
+
+    }
   }
 
   checkAnswer(clickedAnswer: string | null) {
