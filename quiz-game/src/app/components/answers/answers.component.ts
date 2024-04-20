@@ -16,6 +16,7 @@ export class AnswersComponent implements OnInit {
   correctAnswer: string = '';
   checkIfAnswerIsCorrect: boolean = false;
   selectedOption: string = '';
+  errorMessage: string = '';
 
   constructor(private sharedService: SharedCountryIdService, private getAllCountries: GetCountriesService) { }
 
@@ -48,11 +49,12 @@ export class AnswersComponent implements OnInit {
 
   checkAnswer(clickedAnswer: string | null, selectedOption: string) {
     this.selectedOption = selectedOption;
-    
+
     if(clickedAnswer === this.correctAnswer){
       this.checkIfAnswerIsCorrect = true;
     }else{
       this.checkIfAnswerIsCorrect = false;
+      this.errorMessage = `Incorrect answer, correct answer: ${this.correctAnswer}`;
     }
   }
 }

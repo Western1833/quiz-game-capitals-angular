@@ -1,3 +1,7 @@
+<ng-container *ngIf="errorMessage">
+    <p class="errorMessage">{{errorMessage}}</p>
+</ng-container>
+
 <div class="answers">
     <div class="left">
         <p><span>A: </span><span [ngClass]="{ 'correctAnswerStyle': selectedOption === 'A' && checkIfAnswerIsCorrect}" #optionA (click)="checkAnswer(optionA.textContent, 'A')">{{arrayWithCoutriesForAnswers[0]}}</span></p>
