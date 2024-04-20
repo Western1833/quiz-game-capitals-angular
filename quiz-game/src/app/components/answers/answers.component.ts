@@ -14,9 +14,6 @@ export class AnswersComponent implements OnInit {
   arrayWithAllCountries: Countries[] = [];
   arrayWithCoutriesForAnswers: string[] = [];
   correctAnswer: string = '';
-  randomCapital: string = '';
-  threeRandomCapitals: number[] = [];
-  randomNumberForRandomCapital: number = 0;
 
   constructor(private sharedService: SharedCountryIdService, private getAllCountries: GetCountriesService) { }
 
@@ -36,22 +33,15 @@ export class AnswersComponent implements OnInit {
   }
 
   formingTheAnswersArray() {
-    this.randomNumberForRandomCapital = randomNumber(32);
-    if (this.countryId !== this.randomNumberForRandomCapital) {
-      this.threeRandomCapitals.push(this.randomNumberForRandomCapital);
-      this.randomNumberForRandomCapital = 0;
-    } else {
-      if ((this.randomNumberForRandomCapital + 1) > 32) {
-        this.threeRandomCapitals.push(this.randomNumberForRandomCapital);
-        this.randomNumberForRandomCapital - 1;
-        console.log('error1')
-      } else if ((this.randomNumberForRandomCapital - 1) === 0) {
-        this.threeRandomCapitals.push(this.randomNumberForRandomCapital);
-        this.randomNumberForRandomCapital + 1;
-        console.log('error2')
-      }
-
-    }
+    let randomCapital: string = '';
+    let randomCapitalIndex: number = 0;
+  
+    do {
+      randomCapitalIndex = randomNumber(32);
+      randomCapital = this.arrayWithAllCountries[randomCapitalIndex].capital;
+    } while (this.arrayWithCoutriesForAnswers.includes(randomCapital) || this.countryId === randomCapitalIndex);
+  
+    this.arrayWithCoutriesForAnswers.push(randomCapital);
   }
 
   checkAnswer(clickedAnswer: string | null) {
