@@ -69,3 +69,17 @@
 .correctAnswerStyle:hover {
     background-color: rgb(77, 174, 8)!important;
 }
+
+.errorMessage {
+    margin-bottom: 1em;
+}
+
+.errorMessage span:first-child{
+    color: rgb(180, 51, 12);
+    font-size: 1.1em;
+}
+
+.errorMessage span:nth-child(2) {
+    color: rgb(77, 174, 8);
+    font-size: 1.1em;
+}

@@ -54,7 +54,7 @@ export class AnswersComponent implements OnInit {
       this.checkIfAnswerIsCorrect = true;
     }else{
       this.checkIfAnswerIsCorrect = false;
-      this.errorMessage = `Incorrect answer, correct answer: ${this.correctAnswer}`;
+      this.errorMessage = `Incorrect answer, correct answer: `;
     }
   }
 }
