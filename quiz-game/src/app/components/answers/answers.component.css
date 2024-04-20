@@ -59,3 +59,13 @@
 .left span, .right span {
     color: rgb(180, 51, 12);
 }
+
+.correctAnswerStyle {
+    padding: 0.2em;
+    background-color: rgb(77, 174, 8);
+    border-radius: 0.3em;
+}
+
+.correctAnswerStyle:hover {
+    background-color: rgb(77, 174, 8)!important;
+}

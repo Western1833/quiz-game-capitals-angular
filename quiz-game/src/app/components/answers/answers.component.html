@@ -1,10 +1,10 @@
 <div class="answers">
     <div class="left">
-        <p><span>A: </span><span #optionA (click)="checkAnswer(optionA.textContent)">{{arrayWithCoutriesForAnswers[0]}}</span></p>
-        <p><span>C: </span><span #optionC (click)="checkAnswer(optionC.textContent)">{{arrayWithCoutriesForAnswers[1]}}</span></p>
+        <p><span>A: </span><span [ngClass]="{ 'correctAnswerStyle': selectedOption === 'A' && checkIfAnswerIsCorrect}" #optionA (click)="checkAnswer(optionA.textContent, 'A')">{{arrayWithCoutriesForAnswers[0]}}</span></p>
+        <p><span>C: </span><span [ngClass]="{ 'correctAnswerStyle': selectedOption === 'C' && checkIfAnswerIsCorrect}" #optionC (click)="checkAnswer(optionC.textContent, 'C')">{{arrayWithCoutriesForAnswers[1]}}</span></p>
     </div>
     <div class="right">
-        <p><span>B: </span><span #optionB (click)="checkAnswer(optionB.textContent)">{{arrayWithCoutriesForAnswers[2]}}</span></p>
-        <p><span>D: </span><span #optionD (click)="checkAnswer(optionD.textContent)">{{arrayWithCoutriesForAnswers[3]}}</span></p>
+        <p><span>B: </span><span [ngClass]="{ 'correctAnswerStyle': selectedOption === 'B' && checkIfAnswerIsCorrect}" #optionB (click)="checkAnswer(optionB.textContent, 'B')">{{arrayWithCoutriesForAnswers[2]}}</span></p>
+        <p><span>D: </span><span [ngClass]="{ 'correctAnswerStyle': selectedOption === 'D' && checkIfAnswerIsCorrect}" #optionD (click)="checkAnswer(optionD.textContent, 'D')">{{arrayWithCoutriesForAnswers[3]}}</span></p>
     </div>
 </div>

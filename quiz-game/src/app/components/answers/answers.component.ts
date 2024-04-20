@@ -14,6 +14,8 @@ export class AnswersComponent implements OnInit {
   arrayWithAllCountries: Countries[] = [];
   arrayWithCoutriesForAnswers: string[] = [];
   correctAnswer: string = '';
+  checkIfAnswerIsCorrect: boolean = false;
+  selectedOption: string = '';
 
   constructor(private sharedService: SharedCountryIdService, private getAllCountries: GetCountriesService) { }
 
@@ -44,7 +46,13 @@ export class AnswersComponent implements OnInit {
     this.arrayWithCoutriesForAnswers.push(randomCapital);
   }
 
-  checkAnswer(clickedAnswer: string | null) {
-    console.log(clickedAnswer);
+  checkAnswer(clickedAnswer: string | null, selectedOption: string) {
+    this.selectedOption = selectedOption;
+    
+    if(clickedAnswer === this.correctAnswer){
+      this.checkIfAnswerIsCorrect = true;
+    }else{
+      this.checkIfAnswerIsCorrect = false;
+    }
   }
 }
