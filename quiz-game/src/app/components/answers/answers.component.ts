@@ -3,6 +3,7 @@ import { Countries } from 'src/app/interfaces';
 import { GetCountriesService } from 'src/app/services/get-countries.service';
 import { SharedCountryIdService } from 'src/app/services/shared-country-id.service';
 import { randomNumber, arrayShuffle } from 'src/app/utils';
+import { faRefresh, faSync } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-answers',
@@ -17,6 +18,8 @@ export class AnswersComponent implements OnInit {
   checkIfAnswerIsCorrect: boolean = false;
   selectedOption: string = '';
   errorMessage: string = '';
+  faRefresh = faRefresh;
+  faSync = faSync;
 
   constructor(private sharedService: SharedCountryIdService, private getAllCountries: GetCountriesService) { }
 
