@@ -17,6 +17,7 @@ export class AnswersComponent implements OnInit {
   checkIfAnswerIsCorrect: boolean = false;
   selectedOption: string = '';
   errorMessage: string = '';
+  correctAnswersCount: number = 0;
 
   constructor(private sharedService: SharedCountryIdService, private getAllCountries: GetCountriesService) { }
 
@@ -33,6 +34,11 @@ export class AnswersComponent implements OnInit {
       }
       arrayShuffle(this.arrayWithCoutriesForAnswers);
     });
+
+    const storedCount = localStorage.getItem('count');
+    if (storedCount) {
+      this.correctAnswersCount = parseInt(storedCount, 10);
+    }
   }
 
   formingTheAnswersArray() {
@@ -52,6 +58,11 @@ export class AnswersComponent implements OnInit {
 
     if(clickedAnswer === this.correctAnswer){
       this.checkIfAnswerIsCorrect = true;
+      this.correctAnswersCount++;
+      localStorage.setItem('count', this.correctAnswersCount.toString());
+      setTimeout(() => {
+        window.location.reload();
+      }, 650);
     }else{
       this.checkIfAnswerIsCorrect = false;
       this.errorMessage = `Грешен отговор, верният отговор е: `;
@@ -60,5 +71,6 @@ export class AnswersComponent implements OnInit {
 
   loadNewQuestion() {
     window.location.reload();
+    localStorage.removeItem('count');
   }
 }

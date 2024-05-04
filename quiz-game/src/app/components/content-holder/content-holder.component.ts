@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ContentHolderComponent {
   countries: {} = {};
+  count: string | null = '';
 
-  loadCountries() {
-    
+  ngOnInit() {
+    this.checkCorrectAnswers(); // Call checkCorrectAnswers() when component initializes
+  }
+
+  checkCorrectAnswers() {
+    this.count = localStorage.getItem('count');
   }
 }
