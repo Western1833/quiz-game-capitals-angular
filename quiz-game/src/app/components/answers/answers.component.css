@@ -72,14 +72,32 @@
 
 .errorMessage {
     margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .errorMessage span:first-child{
-    color: rgb(180, 51, 12);
+    color: rgb(251, 46, 0);
     font-size: 1.1em;
 }
 
 .errorMessage span:nth-child(2) {
     color: rgb(77, 174, 8);
     font-size: 1.1em;
+    margin-left: 0.5em;
+}
+
+.loadNewQuestion {
+    color: rgb(251, 46, 0);
+    font-size: 1.1em;
+    margin-left: 7em;
+    padding: 0.1em;
+}
+
+.loadNewQuestion:hover {
+    background-color: rgb(60, 60, 176);
+    border-radius: 0.3em;
+    cursor: pointer;
+    padding: 0.1em;
 }

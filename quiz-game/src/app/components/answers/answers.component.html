@@ -1,5 +1,6 @@
 <ng-container *ngIf="errorMessage">
     <p class="errorMessage"><span>{{errorMessage}}</span><span>{{correctAnswer}}</span></p>
+    <span class="loadNewQuestion" (click)="loadNewQuestion()">Започни отначало</span>
 </ng-container>
 
 <div class="answers">
