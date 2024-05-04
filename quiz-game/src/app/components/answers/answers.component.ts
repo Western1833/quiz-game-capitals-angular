@@ -46,7 +46,7 @@ export class AnswersComponent implements OnInit {
     let randomCapitalIndex: number = 0;
   
     do {
-      randomCapitalIndex = randomNumber(32);
+      randomCapitalIndex = randomNumber(56);
       randomCapital = this.arrayWithAllCountries[randomCapitalIndex].capital;
     } while (this.arrayWithCoutriesForAnswers.includes(randomCapital) || this.countryId === randomCapitalIndex);
   
